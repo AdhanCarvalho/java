@@ -26,6 +26,7 @@ abstract class Funcionario implements Trabalhavel {
     }
 }
 
+
 class Gerente extends Funcionario {
     private double bonusAnual;
     private String equipe;
@@ -63,7 +64,7 @@ class Desenvolvedor extends Funcionario {
 
     @Override
     public double calcularSalario() {
-        // Implemente o cálculo do salário do desenvolvedor aqui
+        
         return 0.0;
     }
 
@@ -90,7 +91,7 @@ class Estagiario extends Funcionario {
 
     @Override
     public double calcularSalario() {
-        // Implemente o cálculo do salário do estagiário aqui
+        
         return 0.0;
     }
 
@@ -155,7 +156,7 @@ public class Main {
         String nome = scanner.nextLine();
         System.out.print("Matrícula: ");
         int matricula = scanner.nextInt();
-        scanner.nextLine(); // Limpar o buffer do scanner
+        scanner.nextLine(); 
 
         // Escolher o tipo de funcionário
         System.out.println("Escolha o tipo de funcionário:");
@@ -164,13 +165,13 @@ public class Main {
         System.out.println("3. Estagiário");
         System.out.print("Opção: ");
         int tipo = scanner.nextInt();
-        scanner.nextLine(); // Limpar o buffer do scanner
+        scanner.nextLine(); 
 
         switch (tipo) {
             case 1:
                 System.out.print("Bônus Anual: ");
                 double bonusAnual = scanner.nextDouble();
-                scanner.nextLine(); // Limpar o buffer do scanner
+                scanner.nextLine(); 
                 System.out.print("Equipe: ");
                 String equipe = scanner.nextLine();
                 funcionarios.add(new Gerente(nome, matricula, bonusAnual, equipe));
@@ -190,7 +191,7 @@ public class Main {
             case 3:
                 System.out.print("Horas Trabalhadas: ");
                 int horasTrabalhadas = scanner.nextInt();
-                scanner.nextLine(); // Limpar o buffer do scanner
+                scanner.nextLine(); 
                 System.out.print("Supervisor: ");
                 String supervisor = scanner.nextLine();
                 funcionarios.add(new Estagiario(nome, matricula, horasTrabalhadas, supervisor));
@@ -205,7 +206,7 @@ public class Main {
         System.out.println("\nRemover funcionário:");
         System.out.print("Matrícula do funcionário a ser removido: ");
         int matricula = scanner.nextInt();
-        scanner.nextLine(); // Limpar o buffer do scanner
+        scanner.nextLine(); 
         Funcionario funcionarioRemover = null;
         for (Funcionario funcionario : funcionarios) {
             if (funcionario.getMatricula() == matricula) {
